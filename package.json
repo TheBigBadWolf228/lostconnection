@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/lost-connection-system.git"
+    "url": "https://github.com/TheBigBadWolf228/lostconnection.git"
   },
   "keywords": [
     "foundryvtt",
@@ -20,7 +20,7 @@
   "author": "Dmytro Bashevskyi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/yourusername/lost-connection-system/issues"
+    "url": "https://github.com/TheBigBadWolf228/lostconnection/issues"
   },
-  "homepage": "https://github.com/yourusername/lost-connection-system#readme"
+  "homepage": "https://github.com/TheBigBadWolf228/lostconnection#readme"
 }

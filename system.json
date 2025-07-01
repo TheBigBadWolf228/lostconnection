@@ -31,7 +31,7 @@
   "primaryTokenAttribute": null,
   "secondaryTokenAttribute": null,
   "initiative": "1d6",
-  "url": "https://github.com/yourusername/lost-connection-system",
-  "manifest": "https://raw.githubusercontent.com/yourusername/lost-connection-system/main/system.json",
+  "url": "https://github.com/TheBigBadWolf228/lostconnection",
+  "manifest": "https://github.com/TheBigBadWolf228/lostconnection/blob/main/system.json",
   "download": "https://github.com/yourusername/lost-connection-system/archive/main.zip"
 }
