@@ -1,0 +1,73 @@
+{
+  "ACTIVISTS": {
+    "CharacterSheet": "Character Sheet",
+    "Traits": "Traits",
+    "Convictions": "Convictions",
+    "Authority": "Authority",
+    "Equipment": "Equipment",
+    "Biography": "Biography",
+    
+    "Despair": "Despair",
+    "Hope": "Hope",
+    "Reflection": "Reflection",
+    
+    "Career": "Career",
+    "District": "District",
+    "Trauma": "Trauma",
+    "Hobby": "Hobby",
+    "Contacts": "Contacts",
+    "Notes": "Notes",
+    
+    "Fame": "Fame",
+    "Status": "Status",
+    "Drain": "Drain",
+    
+    "FameRanks": {
+      "Shell": "Shell",
+      "Frame": "Frame", 
+      "Glitch": "Glitch",
+      "Storm": "Storm",
+      "Blast": "Blast"
+    },
+    
+    "StatusRanks": {
+      "Ghost": "Ghost",
+      "Mod": "Mod",
+      "Builder": "Builder",
+      "Guru": "Guru",
+      "Lead": "Lead"
+    },
+    
+    "Traits": {
+      "PeacefulConflicted": "Peaceful - Conflicted",
+      "CoolheadedImpulsive": "Coolheaded - Impulsive",
+      "InventiveCunning": "Inventive - Cunning",
+      "SturdyRough": "Sturdy - Rough",
+      "SincereDeceitful": "Sincere - Deceitful"
+    },
+    
+    "ConvictionTypes": {
+      "Weak": "Weak",
+      "Stable": "Stable",
+      "Strong": "Strong"
+    },
+    
+    "Buttons": {
+      "RollCheck": "Roll Character Check",
+      "RollHope": "Roll Hope",
+      "Use": "Use",
+      "Repair": "Repair",
+      "Activate": "Activate"
+    },
+    
+    "Dialog": {
+      "Difficulty": "Difficulty",
+      "Simple": "Simple (1)",
+      "Challenge": "Challenge (2)",
+      "Complex": "Complex (3)",
+      "UseSignature": "Use Signature",
+      "GetHelp": "Get Help",
+      "ActionName": "Action Name"
+    }
+  }
+}

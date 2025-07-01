@@ -1,0 +1,112 @@
+{
+  "Actor": {
+    "types": ["character"],
+    "templates": {
+      "base": {
+        "despair": {
+          "value": 0,
+          "max": 10
+        },
+        "reflection": {
+          "ethical": 0,
+          "shadow": 0
+        }
+      }
+    },
+    "character": {
+      "templates": ["base"],
+      "biography": {
+        "career": "",
+        "trauma": "",
+        "hobby": "",
+        "district": ""
+      },
+      "traits": {
+        "peaceful_conflicted": {
+          "name": "Миролюбність - Конфліктність",
+          "distribution": "3-3",
+          "left": 3,
+          "right": 3
+        },
+        "coolheaded_impulsive": {
+          "name": "Холоднокровність - Імпульсивність",
+          "distribution": "3-3",
+          "left": 3,
+          "right": 3
+        },
+        "inventive_cunning": {
+          "name": "Винахідливість - Хитрість",
+          "distribution": "3-3",
+          "left": 3,
+          "right": 3
+        },
+        "sturdy_rough": {
+          "name": "Міцність - Грубість",
+          "distribution": "3-3",
+          "left": 3,
+          "right": 3
+        },
+        "sincere_deceitful": {
+          "name": "Щирість - Підступність",
+          "distribution": "3-3",
+          "left": 3,
+          "right": 3
+        }
+      },
+      "authority": {
+        "fame": {
+          "value": "Frame",
+          "rank": 2
+        },
+        "status": {
+          "value": "Mod",
+          "rank": 2
+        },
+        "drain": false
+      },
+      "signatures": [],
+      "sparks": [],
+      "convictions": {
+        "weak": [],
+        "stable": [],
+        "strong": []
+      },
+      "contacts": "",
+      "notes": ""
+    }
+  },
+  "Item": {
+    "types": ["conviction", "signature", "equipment", "modification"],
+    "templates": {
+      "base": {
+        "description": ""
+      }
+    },
+    "conviction": {
+      "templates": ["base"],
+      "type": "weak",
+      "ethical": true,
+      "event": "",
+      "conclusion": "",
+      "damage": {
+        "value": 0,
+        "max": 1
+      }
+    },
+    "signature": {
+      "templates": ["base"],
+      "career": "",
+      "active": false
+    },
+    "equipment": {
+      "templates": ["base"],
+      "condition": "working",
+      "needsRepair": false
+    },
+    "modification": {
+      "templates": ["base"],
+      "type": "",
+      "usedThisSession": false
+    }
+  }
+}

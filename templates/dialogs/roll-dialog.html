@@ -1,0 +1,67 @@
+<div class="activists-roll-dialog">
+  <div class="form-group">
+    <label>Action Name</label>
+    <input type="text" name="actionName" placeholder="What are you trying to do?" />
+  </div>
+
+  <div class="form-group">
+    <label>Selected Traits</label>
+    <div class="selected-traits">
+      {{#each traits as |trait|}}
+      <span class="trait-tag">{{trait.name}} ({{trait.range}})</span>
+      {{/each}}
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Difficulty</label>
+    <select name="difficulty">
+      <option value="1">Simple (1 hit)</option>
+      <option value="2">Challenge (2 hits)</option>
+      <option value="3">Complex (3 hits)</option>
+    </select>
+  </div>
+
+  {{#if signatures}}
+  <div class="form-group">
+    <label>Use Signature? (+1d6)</label>
+    <div class="signatures-list">
+      <label>
+        <input type="radio" name="signature" value="false" checked /> None
+      </label>
+      {{#each signatures as |sig|}}
+      <label>
+        <input type="radio" name="signature" value="true" /> {{sig.name}}
+      </label>
+      {{/each}}
+    </div>
+  </div>
+  {{/if}}
+
+  {{#if hasHelp}}
+  <div class="form-group">
+    <label>
+      <input type="checkbox" name="help" /> Get Help from Ally (+1d6)
+    </label>
+    <p class="help-note">Note: Helper receives all Despair from this roll</p>
+  </div>
+  {{/if}}
+
+  <div class="roll-summary">
+    <p>You will roll <span class="dice-count">2d6</span></p>
+  </div>
+</div>
+
+<script>
+  // Update dice count display
+  const updateDiceCount = () => {
+    let count = 2;
+    if (document.querySelector('[name="signature"]:checked').value === 'true') count++;
+    if (document.querySelector('[name="help"]').checked) count++;
+    document.querySelector('.dice-count').textContent = count + 'd6';
+  };
+  
+  document.querySelectorAll('[name="signature"], [name="help"]').forEach(el => {
+    el.addEventListener('change', updateDiceCount);
+  });
+</script>

@@ -1,0 +1,37 @@
+{
+  "id": "lostConnection",
+  "title": "Lost Connection",
+  "description": "A cyberpunk TTRPG system set in a dystopian city",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "10",
+    "verified": "11"
+  },
+  "authors": [{
+    "name": "Dmytro Bashevskyi",
+    "email": "thebigbadwolf228@gmail.com"
+  }],
+  "esmodules": ["scripts/lostconnection.js"],
+  "styles": ["styles/lostconnection.css"],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "uk",
+      "name": "Українська",
+      "path": "lang/uk.json"
+    }
+  ],
+  "packs": [],
+  "gridDistance": 1,
+  "gridUnits": "m",
+  "primaryTokenAttribute": null,
+  "secondaryTokenAttribute": null,
+  "initiative": "1d6",
+  "url": "https://github.com/yourusername/lost-connection-system",
+  "manifest": "https://raw.githubusercontent.com/yourusername/lost-connection-system/main/system.json",
+  "download": "https://github.com/yourusername/lost-connection-system/archive/main.zip"
+}

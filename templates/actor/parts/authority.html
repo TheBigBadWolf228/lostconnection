@@ -1,0 +1,63 @@
+<div class="authority-section">
+  <div class="authority-rank">
+    <h4>Fame (Відомість)</h4>
+    <select name="system.authority.fame.value" class="authority-change">
+      {{#each fameRanks as |rank|}}
+      <option value="{{rank}}" {{#if (eq ../system.authority.fame.value rank)}}selected{{/if}}>{{rank}}</option>
+      {{/each}}
+    </select>
+    <div class="rank-details">
+      <p>Current Rank: {{system.authority.fame.rank}}</p>
+    </div>
+  </div>
+
+  <div class="authority-rank">
+    <h4>Status (Статус)</h4>
+    <select name="system.authority.status.value" class="authority-change">
+      {{#each statusRanks as |rank|}}
+      <option value="{{rank}}" {{#if (eq ../system.authority.status.value rank)}}selected{{/if}}>{{rank}}</option>
+      {{/each}}
+    </select>
+    <div class="rank-details">
+      <p>Current Rank: {{system.authority.status.rank}}</p>
+    </div>
+  </div>
+</div>
+
+<div class="drain-indicator">
+  <h4>Drain (Дрейн)</h4>
+  {{#if system.authority.drain}}
+    <p class="drain-active">⚠️ DRAIN ACTIVE - Next expense will reduce Authority!</p>
+  {{else}}
+    <p>No active drain</p>
+  {{/if}}
+  <button type="button" class="drain-toggle">
+    {{#if system.authority.drain}}Clear Drain{{else}}Activate Drain{{/if}}
+  </button>
+</div>
+
+<div class="authority-info">
+  <h4>Authority Benefits</h4>
+  <div class="benefits-grid">
+    <div class="fame-benefits">
+      <h5>Fame Benefits:</h5>
+      <ul>
+        <li><strong>Shell:</strong> Access to desperate districts</li>
+        <li><strong>Frame:</strong> Basic contacts, open districts</li>
+        <li><strong>Glitch:</strong> Most cartels, standard districts</li>
+        <li><strong>Storm:</strong> Elite contacts, restricted districts</li>
+        <li><strong>Blast:</strong> Best experts, any district</li>
+      </ul>
+    </div>
+    <div class="status-benefits">
+      <h5>Status Benefits:</h5>
+      <ul>
+        <li><strong>Ghost:</strong> Basic survival equipment</li>
+        <li><strong>Mod:</strong> Simple equipment, minor district changes</li>
+        <li><strong>Builder:</strong> Good equipment, significant changes</li>
+        <li><strong>Guru:</strong> Excellent equipment, major influence</li>
+        <li><strong>Lead:</strong> Unique items, reshape districts</li>
+      </ul>
+    </div>
+  </div>
+</div>

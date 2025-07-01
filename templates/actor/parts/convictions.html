@@ -1,0 +1,82 @@
+<div class="convictions-section">
+  {{!-- Weak Convictions --}}
+  <div class="conviction-group">
+    <h3>Weak Convictions (Хиткі)</h3>
+    <div class="items-list">
+      {{#each convictions.weak as |conviction|}}
+      <div class="conviction-item" data-item-id="{{conviction._id}}">
+        <div class="conviction-info">
+          <h4>{{conviction.name}}</h4>
+          <span class="conviction-type">{{#if conviction.system.ethical}}Ethical{{else}}Shadow{{/if}}</span>
+        </div>
+        <div class="conviction-damage">
+          {{#times conviction.system.damage.max}}
+          <span class="damage-box {{#if (lte @index ../conviction.system.damage.value)}}filled{{/if}}" 
+                data-action="toggle" data-index="{{@index}}"></span>
+          {{/times}}
+        </div>
+        <div class="item-controls">
+          <a class="conviction-use" title="Use Conviction"><i class="fas fa-hand-sparkles"></i></a>
+          <a class="item-control item-edit" title="Edit"><i class="fas fa-edit"></i></a>
+          <a class="item-control item-delete" title="Delete"><i class="fas fa-trash"></i></a>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+    <button type="button" class="add-conviction" data-type="weak">+ Add Weak Conviction</button>
+  </div>
+
+  {{!-- Stable Convictions --}}
+  <div class="conviction-group">
+    <h3>Stable Convictions (Сталі)</h3>
+    <div class="items-list">
+      {{#each convictions.stable as |conviction|}}
+      <div class="conviction-item" data-item-id="{{conviction._id}}">
+        <div class="conviction-info">
+          <h4>{{conviction.name}}</h4>
+          <span class="conviction-type">{{#if conviction.system.ethical}}Ethical{{else}}Shadow{{/if}}</span>
+        </div>
+        <div class="conviction-damage">
+          {{#times conviction.system.damage.max}}
+          <span class="damage-box {{#if (lte @index ../conviction.system.damage.value)}}filled{{/if}}" 
+                data-action="toggle" data-index="{{@index}}"></span>
+          {{/times}}
+        </div>
+        <div class="item-controls">
+          <a class="conviction-use" title="Use Conviction"><i class="fas fa-hand-sparkles"></i></a>
+          <a class="item-control item-edit" title="Edit"><i class="fas fa-edit"></i></a>
+          <a class="item-control item-delete" title="Delete"><i class="fas fa-trash"></i></a>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+    <button type="button" class="add-conviction" data-type="stable">+ Add Stable Conviction</button>
+  </div>
+
+  {{!-- Strong Convictions --}}
+  <div class="conviction-group">
+    <h3>Strong Convictions (Міцні)</h3>
+    <div class="items-list">
+      {{#each convictions.strong as |conviction|}}
+      <div class="conviction-item" data-item-id="{{conviction._id}}">
+        <div class="conviction-info">
+          <h4>{{conviction.name}}</h4>
+          <span class="conviction-type">{{#if conviction.system.ethical}}Ethical{{else}}Shadow{{/if}}</span>
+        </div>
+        <div class="conviction-damage">
+          {{#times conviction.system.damage.max}}
+          <span class="damage-box {{#if (lte @index ../conviction.system.damage.value)}}filled{{/if}}" 
+                data-action="toggle" data-index="{{@index}}"></span>
+          {{/times}}
+        </div>
+        <div class="item-controls">
+          <a class="conviction-use" title="Use Conviction"><i class="fas fa-hand-sparkles"></i></a>
+          <a class="item-control item-edit" title="Edit"><i class="fas fa-edit"></i></a>
+          <a class="item-control item-delete" title="Delete"><i class="fas fa-trash"></i></a>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+    <button type="button" class="add-conviction" data-type="strong">+ Add Strong Conviction</button>
+  </div>
+</div>

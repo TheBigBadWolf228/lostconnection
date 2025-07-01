@@ -1,0 +1,73 @@
+{
+  "ACTIVISTS": {
+    "CharacterSheet": "Аркуш Персонажа",
+    "Traits": "Риси",
+    "Convictions": "Переконання",
+    "Authority": "Авторитет",
+    "Equipment": "Спорядження",
+    "Biography": "Біографія",
+    
+    "Despair": "Відчай",
+    "Hope": "Надія",
+    "Reflection": "Рефлексія",
+    
+    "Career": "Кар'єра",
+    "District": "Район",
+    "Trauma": "Травма",
+    "Hobby": "Хобі",
+    "Contacts": "Контакти",
+    "Notes": "Нотатки",
+    
+    "Fame": "Відомість",
+    "Status": "Статус",
+    "Drain": "Дрейн",
+    
+    "FameRanks": {
+      "Shell": "Шелл",
+      "Frame": "Фрейм", 
+      "Glitch": "Глітч",
+      "Storm": "Шторм",
+      "Blast": "Бласт"
+    },
+    
+    "StatusRanks": {
+      "Ghost": "Гост",
+      "Mod": "Мод",
+      "Builder": "Білдер",
+      "Guru": "Гуру",
+      "Lead": "Лід"
+    },
+    
+    "Traits": {
+      "PeacefulConflicted": "Миролюбність - Конфліктність",
+      "CoolheadedImpulsive": "Холоднокровність - Імпульсивність",
+      "InventiveCunning": "Винахідливість - Хитрість",
+      "SturdyRough": "Міцність - Грубість",
+      "SincereDeceitful": "Щирість - Підступність"
+    },
+    
+    "ConvictionTypes": {
+      "Weak": "Хитке",
+      "Stable": "Стале",
+      "Strong": "Міцне"
+    },
+    
+    "Buttons": {
+      "RollCheck": "Перевірка Характеру",
+      "RollHope": "Кидок Надії",
+      "Use": "Використати",
+      "Repair": "Ремонт",
+      "Activate": "Активувати"
+    },
+    
+    "Dialog": {
+      "Difficulty": "Складність",
+      "Simple": "Проста (1)",
+      "Challenge": "Виклик (2)",
+      "Complex": "Складна (3)",
+      "UseSignature": "Використати Сигнатуру",
+      "GetHelp": "Отримати Допомогу",
+      "ActionName": "Назва Дії"
+    }
+  }
+}

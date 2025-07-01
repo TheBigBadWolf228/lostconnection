@@ -1,0 +1,64 @@
+<form class="{{cssClass}}" autocomplete="off">
+  <header class="sheet-header">
+    <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+    <div class="header-fields">
+      <h1 class="charname">
+        <input name="name" type="text" value="{{item.name}}" placeholder="Conviction Name"/>
+      </h1>
+    </div>
+  </header>
+
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item" data-tab="description">Description</a>
+    <a class="item" data-tab="details">Details</a>
+  </nav>
+
+  <section class="sheet-body">
+    <div class="tab" data-group="primary" data-tab="description">
+      <div class="form-group">
+        <label>Event</label>
+        <input type="text" name="system.event" value="{{system.event}}" placeholder="What happened?"/>
+      </div>
+      
+      <div class="form-group">
+        <label>Conclusion</label>
+        <input type="text" name="system.conclusion" value="{{system.conclusion}}" placeholder="What did you learn?"/>
+      </div>
+      
+      <div class="form-group">
+        <label>Full Description</label>
+        <textarea name="system.description">{{system.description}}</textarea>
+      </div>
+    </div>
+
+    <div class="tab" data-group="primary" data-tab="details">
+      <div class="form-group">
+        <label>Type</label>
+        <select name="system.type">
+          {{#each convictionTypes as |label key|}}
+          <option value="{{key}}" {{#if (eq ../system.type key)}}selected{{/if}}>{{label}}</option>
+          {{/each}}
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label>
+          <input type="checkbox" name="system.ethical" {{#if system.ethical}}checked{{/if}}/>
+          Ethical (vs Shadow)
+        </label>
+      </div>
+      
+      <div class="form-group">
+        <label>Damage Track</label>
+        <div class="damage-settings">
+          <label>Max Damage:</label>
+          <input type="number" class="damage-max" name="system.damage.max" value="{{system.damage.max}}" min="1" max="3"/>
+        </div>
+        <div class="damage-display">
+          <label>Current Damage:</label>
+          <span>{{system.damage.value}} / {{system.damage.max}}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</form>

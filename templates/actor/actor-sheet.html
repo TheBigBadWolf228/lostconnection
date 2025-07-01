@@ -1,0 +1,159 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+  {{!-- Sheet Header --}}
+  <header class="sheet-header">
+    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+    <div class="header-fields">
+      <h1 class="charname">
+        <input name="name" type="text" value="{{actor.name}}" placeholder="Name"/>
+      </h1>
+      <div class="resources">
+        <div class="resource">
+          <label>Career</label>
+          <input type="text" name="system.biography.career" value="{{system.biography.career}}" />
+        </div>
+        <div class="resource">
+          <label>District</label>
+          <input type="text" name="system.biography.district" value="{{system.biography.district}}" />
+        </div>
+      </div>
+      {{!-- Despair Tracker --}}
+      <div class="despair-tracker">
+        <label>Despair</label>
+        <div class="despair-boxes">
+          {{#times 10}}
+          <input type="checkbox" class="despair-box" {{#if (lte @index ../system.despair.value)}}checked{{/if}} disabled/>
+          {{/times}}
+        </div>
+        <div class="despair-controls">
+          <button type="button" class="despair-control" data-action="decrease">-</button>
+          <span class="despair-value">{{system.despair.value}}</span>
+          <button type="button" class="despair-control" data-action="increase">+</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  {{!-- Sheet Tab Navigation --}}
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item" data-tab="traits">Traits</a>
+    <a class="item" data-tab="convictions">Convictions</a>
+    <a class="item" data-tab="authority">Authority</a>
+    <a class="item" data-tab="equipment">Equipment</a>
+    <a class="item" data-tab="biography">Biography</a>
+  </nav>
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+    
+    {{!-- Traits Tab --}}
+    <div class="tab traits" data-group="primary" data-tab="traits">
+      <div class="traits-list">
+        {{#each system.traits as |trait key|}}
+        <div class="trait-row" data-trait="{{key}}">
+          <div class="trait-name">{{trait.name}}</div>
+          <div class="trait-distribution">
+            <span class="left-trait">{{trait.left}}</span>
+            <input type="range" class="trait-slider" 
+                   min="1" max="5" 
+                   value="{{trait.left}}" 
+                   data-trait="{{key}}"/>
+            <span class="right-trait">{{trait.right}}</span>
+          </div>
+          <div class="trait-select-boxes">
+            <input type="checkbox" class="trait-select" data-trait="{{key}}" data-side="left"/>
+            <span>{{trait.leftRange}}</span>
+            |
+            <input type="checkbox" class="trait-select" data-trait="{{key}}" data-side="right"/>
+            <span>{{trait.rightRange}}</span>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+      
+      <div class="roll-buttons">
+        <button type="button" class="roll-check">Roll Character Check</button>
+        <button type="button" class="roll-hope">Roll Hope</button>
+      </div>
+
+      {{!-- Signatures --}}
+      <div class="signatures-section">
+        <h3>Signatures</h3>
+        <div class="items-list">
+          {{#each signatures as |signature|}}
+          <div class="item" data-item-id="{{signature._id}}">
+            <img src="{{signature.img}}" title="{{signature.name}}" width="24" height="24"/>
+            <h4>{{signature.name}}</h4>
+            <div class="item-controls">
+              <a class="item-control item-edit" title="Edit"><i class="fas fa-edit"></i></a>
+              <a class="item-control item-delete" title="Delete"><i class="fas fa-trash"></i></a>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+
+    {{!-- Convictions Tab --}}
+    <div class="tab convictions" data-group="primary" data-tab="convictions">
+      {{> "systems/lostconnection/templates/actor/parts/convictions.html"}}
+      
+      {{!-- Reflection Tracker --}}
+      <div class="reflection-tracker">
+        <h3>Reflection</h3>
+        <div class="reflection-grid">
+          <div class="ethical-track">
+            <label>Ethical</label>
+            {{#times 6}}
+            <span class="reflection-mark {{#if (lte @index ../system.reflection.ethical)}}marked{{/if}}" 
+                  data-type="ethical" data-index="{{@index}}">
+              {{#if (lte @index ../system.reflection.ethical)}}X{{else}}O{{/if}}
+            </span>
+            {{/times}}
+          </div>
+          <div class="shadow-track">
+            <label>Shadow</label>
+            {{#times 6}}
+            <span class="reflection-mark {{#if (lte @index ../system.reflection.shadow)}}marked{{/if}}" 
+                  data-type="shadow" data-index="{{@index}}">
+              {{#if (lte @index ../system.reflection.shadow)}}●{{else}}○{{/if}}
+            </span>
+            {{/times}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{!-- Authority Tab --}}
+    <div class="tab authority" data-group="primary" data-tab="authority">
+      {{> "systems/lostconnection/templates/actor/parts/authority.html"}}
+    </div>
+
+    {{!-- Equipment Tab --}}
+    <div class="tab equipment" data-group="primary" data-tab="equipment">
+      {{> "systems/lostconnection/templates/actor/parts/equipment.html"}}
+    </div>
+
+    {{!-- Biography Tab --}}
+    <div class="tab biography" data-group="primary" data-tab="biography">
+      <div class="biography-content">
+        <div class="form-group">
+          <label>Trauma</label>
+          <textarea name="system.biography.trauma">{{system.biography.trauma}}</textarea>
+        </div>
+        <div class="form-group">
+          <label>Hobby</label>
+          <input type="text" name="system.biography.hobby" value="{{system.biography.hobby}}"/>
+        </div>
+        <div class="form-group">
+          <label>Contacts</label>
+          <textarea name="system.contacts">{{system.contacts}}</textarea>
+        </div>
+        <div class="form-group">
+          <label>Notes</label>
+          <textarea name="system.notes">{{system.notes}}</textarea>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+</form>

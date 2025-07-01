@@ -1,0 +1,26 @@
+{
+  "name": "lostconnection-foundryvtt",
+  "version": "1.0.0",
+  "description": "Lost Connection game system for Foundry VTT",
+  "main": "scripts/lostconnection.js",
+  "scripts": {
+    "build": "echo 'No build process required'",
+    "package": "zip -r lostconnection-system.zip . -x '*.git*' 'node_modules/*' '*.zip' 'package*.json'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/lost-connection-system.git"
+  },
+  "keywords": [
+    "foundryvtt",
+    "lostconnection",
+    "cyberpunk",
+    "ttrpg"
+  ],
+  "author": "Dmytro Bashevskyi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yourusername/lost-connection-system/issues"
+  },
+  "homepage": "https://github.com/yourusername/lost-connection-system#readme"
+}
